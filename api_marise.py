@@ -20,11 +20,6 @@ dash = HSplit(
             title='DISCO',
                 border_color=5,
         ),
-        VSplit(
-            HGauge(),
-            title='CPU',
-                border_color=6,
-        ),
 )
 
 while True:
@@ -43,14 +38,6 @@ while True:
     disc_use = disk_usage('/').percent
     disc_percent_dash.value = disc_use
     disc_percent_dash.title = f'DISCO {disc_use}%'
-
-
-    #Memoria CPU
-    cpu_dash = dash.items[2]
-    cpu_percent_dash = dash.items[0]
-    cpu_use = cpu_percent()
-    cpu_percent_dash.value = cpu_use
-    cpu_percent_dash.title = f'CPU {cpu_percent_dash.value}%'
 
     try:
         dash.display()
